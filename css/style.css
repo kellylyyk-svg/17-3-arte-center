@@ -20,15 +20,13 @@ body {font-family: 'SpokaHanSansNeo'; background: #faf8f4;}
 .header .nav .gnb > li:hover .lnb {display: block;}
 
 
-.visual {width: 1920px; height: 897px; margin: 0 auto;}
-.visual .hero-img img {width: 100%; height: 100%; object-fit: cover; position: relative;}
-.visual .content {position: absolute; top: 15%; padding: 0 352px;}
-.visual .content .title {font-family: "Crimson Text", serif; font-size: 90px; color: #fff; margin-bottom: 10px;}
-.visual .content .sub_title {color: #fff; font-size: 30px; font-family: "KoPubWorld돋움"; margin-bottom: 50px;}
-.visual .content .visual-btn {background: #beab8f; width: 248px; height: 55px; border: none;}
-.visual .content .visual-btn a {display: flex; align-items: center; font-size: 17px; justify-content: center; height: 100%; font-weight: bold;}
+.visual {width: 1920px; height: 897px; margin: 0 auto; position: relative; display: flex; justify-content: center;}
+.visual img {width: 100%; height: 100%;}
+.visual .visual-btn { position: absolute; bottom: 228px; left: 352px;}
+.visual .visual-btn a {display: flex; align-items: center; font-size: 17px; justify-content: center; background: #beab8f; padding: 17px 22px; font-weight: bold;}
+.visual .visual-btn img {width: 30px; height: 30px;}
 
-.visual .pagination {position: absolute; width: 1216px; display: flex; gap: 15px; bottom: 0; justify-content: end;}
+.visual .pagination {position: absolute; width: 1216px; display: flex; gap: 15px; bottom: 30px; justify-content: end;}
 .visual .pagination a {width: 10px; height: 10px; background: #beab8f; border-radius: 50%;}
 .visual .pagination a.on {background: #494136;}
 
