@@ -14,7 +14,7 @@ body {
 }
 
 .centerbox {
-    max-width: 1213px;
+    max-width: 1216px;
     margin: 0 auto;
     width: 92%;
 }
@@ -113,53 +113,47 @@ body {
 
 
 .visual {
-    width: 100vw;
-    height: auto;
+    width: 100%;
+    height: 850px;
     margin: 0 auto;
     position: relative;
-    display: flex;
-    justify-content: center;
     overflow: hidden;
+    background: #000;
 }
 
 .visual img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
-.visual .visual-btn {
+.visual::after {
+    content: '';
     position: absolute;
-    bottom: 228px;
-    left: 352px;
-    background: #beab8f;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
 }
 
-.visual .visual-btn a {
-    display: flex;
-    align-items: center;
-    font-size: 1.7rem;
-    justify-content: center;
-    padding: 17px 22px;
-    font-weight: bold;
-}
 
-.visual .visual-btn img {
-    width: 1.56vw;
-    height: 1.56vh;
-}
-
-.visual .visual-btn:hover {
-    background: #a7957a;
-}
 
 .visual .pagination {
     position: absolute;
-    width: 1216px;
+    width: 100%;
+    max-width: 1216px;
     display: flex;
     gap: 15px;
     bottom: 30px;
     justify-content: end;
+    z-index: 10;
 }
 
 .visual .pagination span {
@@ -167,10 +161,65 @@ body {
     height: 10px;
     background: #beab8f;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .visual .pagination .on {
-    background: #494136;
+    background: #fff;
+}
+
+.visual_content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    z-index: 3;
+}
+
+.visual_text_area {
+    width: 100%;
+}
+
+.visual_title {
+    font-family: 'Crimson Text', serif;
+    font-size: 9rem;
+    line-height: 1.1;
+    font-weight: 400;
+    margin-bottom: 3.5rem;
+    letter-spacing: -0.02em;
+}
+
+.visual_subtitle {
+    font-family: 'KoPubWorld돋움', sans-serif;
+    font-size: 3rem;
+    line-height: 1.4;
+    font-weight: 300;
+    margin-bottom: 5.5rem;
+}
+
+.btn_view_program {
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.8rem 2.8rem;
+    background: #d0c3ae;
+    color: #000;
+    font-size: 1.8rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn_view_program img {
+    width: 2.4rem !important;
+    height: auto !important;
+    filter: brightness(0);
+    transform: rotate(45deg);
+}
+
+.btn_view_program:hover {
+    background: #bdaa8e;
 }
 
 
@@ -343,7 +392,9 @@ body {
     align-items: center;
 }
 
-.section_plus .textbox .btn_box .bottom img {}
+.section_plus .textbox .btn_box .bottom img {
+    margin-left: 5px;
+}
 
 .section_plus .img1 {
     width: 466px;
@@ -503,7 +554,8 @@ body {
     text-align: center;
     color: #704100;
     border: 1px dotted #8f8f8f;
-    width: 858px;
+    max-width: 858px;
+    width: 90%;
     padding: 21px 0;
     font-size: 20px;
 }
@@ -517,7 +569,7 @@ body {
 .section3 .section3-title {
     background: #494136;
     height: 62px;
-    width: 594px;
+    flex: 1;
 }
 
 .section3 .section3-title a {
@@ -575,7 +627,8 @@ body {
 
 .section3-content ul.info .info-content {
     font-size: 14px;
-    white-space: nowrap;
+    line-height: 1.5;
+    word-break: keep-all;
 }
 
 .root_daum_roughmap .cont .section.lst {
@@ -601,8 +654,8 @@ body {
 }
 
 .footer .footer_info {
-    width: 760px;
-    height: 180px;
+    max-width: 760px;
+    width: 100%;
 }
 
 .footer .footer_info ul {
@@ -614,9 +667,10 @@ body {
 }
 
 .footer .footer_info li {
-    width: 340px;
+    width: auto;
+    min-width: 300px;
     flex-shrink: 0;
-    height: 51px;
+    margin-bottom: 20px;
 }
 
 .footer .footer_info li .title {
@@ -638,7 +692,7 @@ body {
 /* mobile */
 @media screen and (max-width:1024px) {
     html {
-        font-size: 9px;
+        font-size: 10px;
     }
 
     /* Header Mobile */
@@ -779,32 +833,36 @@ body {
 
     /* Visual Mobile */
     .visual {
-        height: auto;
-        min-height: 300px;
+        height: 600px;
+        min-height: auto;
     }
 
-    .visual .visual-btn {
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80%;
-        text-align: center;
-        padding: 10px;
+    .visual_title {
+        font-size: 3.5rem;
+        margin-bottom: 2rem;
+        word-break: keep-all;
     }
 
-    .visual .visual-btn a {
-        width: 100%;
-        font-size: 1.4rem;
-        padding: 10px 0;
+    .visual_subtitle {
+        font-size: 1.6rem;
+        margin-bottom: 4rem;
+        word-break: keep-all;
+    }
+
+    .btn_view_program {
+        padding: 1.5rem 2.2rem;
+        font-size: 1.6rem;
+        gap: 1.5rem;
     }
 
     .visual .pagination {
         width: 100%;
+        max-width: none;
+        padding: 0 4%;
         justify-content: center;
-        bottom: 80px;
+        bottom: 30px;
     }
 
-    .section1 .content {}
 
     .section1 .content1,
     .content2,
@@ -814,7 +872,6 @@ body {
         margin-bottom: 40px;
     }
 
-    .section1 .content .img_area {}
 
     .section1 .content .img_area .popup {
         visibility: visible;
@@ -883,7 +940,7 @@ body {
     }
 
     .section2-content .noticebox .news {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         color: #555;
         margin-bottom: 5px;
         white-space: normal;
@@ -891,7 +948,7 @@ body {
     }
 
     .section2-content .noticebox .date {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         color: #888;
     }
 
@@ -937,6 +994,22 @@ body {
 
     .section3 .section3-content {
         height: auto;
+        padding: 30px 20px;
+    }
+
+    .section3-content ul.info .info-title {
+        width: 100px;
+        margin-right: 20px;
+        font-size: 1.6rem;
+    }
+
+    .section3-content ul.info .info-content {
+        font-size: 1.6rem;
+    }
+
+    .section3 .section3-title a {
+        font-size: 1.8rem;
+        padding: 0 15px;
     }
 
     /* Map Responsive */
@@ -997,6 +1070,7 @@ body {
 
     .footer .footer_info li .content {
         white-space: normal;
+        font-size: 1.6rem;
     }
 
     /* Mobile Menu Overlay */
@@ -1021,7 +1095,7 @@ body {
 
 @media screen and (max-width:768px) {
     html {
-        font-size: 8px;
+        font-size: 10px;
     }
 
     .visual .visual-btn {
@@ -1032,5 +1106,26 @@ body {
         flex-direction: column;
         align-items: center;
         margin: 3rem auto 10rem auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    /* Small Mobile Section 3 stacking */
+    .section3-content ul.info li {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .section3-content ul.info .info-title {
+        width: 100%;
+        margin-bottom: 5px;
+        color: #494136;
+        font-weight: bold;
+    }
+
+    .section3-content ul.info .info-content {
+        width: 100%;
+        padding-left: 0;
     }
 }
